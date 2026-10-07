@@ -46,7 +46,7 @@ if ingredients_list:
 
     insert_stmt = f"INSERT INTO smoothies.public.orders (ingredients, Name_on_order, order_uid) SELECT '{ingredients_string}', '{Name_on_order}', UUID_STRING()"
 
-    st.write(insert_stmt)
+    #st.write(insert_stmt)
     time_to_insert = st.button('Submit Order')
     if time_to_insert:
         session.sql(insert_stmt).collect()
